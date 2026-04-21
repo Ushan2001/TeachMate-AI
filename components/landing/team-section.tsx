@@ -59,7 +59,7 @@ const teamMembers = [
     color: "#fdcb6e",
     gradient: "from-[#fdcb6e] to-[#ffeaa7]",
     initials: "LJ",
-    image: null,
+    image: "/images/lashini.jpg",
   },
 ];
 
