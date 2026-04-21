@@ -5,12 +5,9 @@ import { useRef } from "react";
 import {
   FileText,
   Download,
-  Eye,
-  ExternalLink,
   FolderOpen,
   CheckCircle2,
   Clock,
-  FileSpreadsheet,
   BookOpen,
 } from "lucide-react";
 
@@ -25,7 +22,7 @@ const documentCategories = [
         type: "PDF",
         status: "available" as const,
         description: "Initial project charter defining scope, stakeholders, and objectives.",
-        link: "#",
+        link: "/pdfs/IT4010-TAF-2025 July Batch.pdf",
       },
     ],
   },
@@ -39,35 +36,14 @@ const documentCategories = [
         type: "PDF",
         status: "available" as const,
         description: "Comprehensive proposal covering problem, literature review, and methodology.",
-        link: "#",
+        link: "/pdfs/ResearchProposal.pdf",
       },
       {
         name: "Topic Assessment Form (TAF)",
         type: "PDF",
         status: "available" as const,
         description: "Topic assessment form approved by the department.",
-        link: "#",
-      },
-    ],
-  },
-  {
-    title: "Status Documents",
-    icon: FileSpreadsheet,
-    color: "#00b894",
-    documents: [
-      {
-        name: "Status Document - 1",
-        type: "PDF",
-        status: "available" as const,
-        description: "First status checklist covering initial progress milestones.",
-        link: "#",
-      },
-      {
-        name: "Status Document - 2",
-        type: "PDF",
-        status: "available" as const,
-        description: "Second status checklist covering mid-project evaluation.",
-        link: "#",
+        link: "/pdfs/IT4010-TAF-2025 July Batch.pdf",
       },
     ],
   },
@@ -77,32 +53,32 @@ const documentCategories = [
     color: "#fdcb6e",
     documents: [
       {
-        name: "IT21168222 - VLM-Based OCR & AI Grading",
+        name: "IT22243362 - VLM-Based OCR & AI Grading",
         type: "PDF",
         status: "available" as const,
         description: "Individual report by Pathiraja P.U.M. — Component 1.",
-        link: "#",
+        link: "/pdfs/IT22243362_25-26J-162.pdf",
       },
       {
-        name: "IT21164330 - Knowledge Graphs & BKT/GNN",
+        name: "IT22103154 - Knowledge Graphs & BKT/GNN",
         type: "PDF",
         status: "available" as const,
         description: "Individual report by Wanniarachchi W.A.P.M. — Component 2.",
-        link: "#",
+        link: "/pdfs/IT22103154 - 25-26J-162.pdf",
       },
       {
-        name: "IT21175466 - Bloom's Taxonomy Question Gen",
+        name: "IT22120052 - Bloom's Taxonomy Question Gen",
         type: "PDF",
         status: "available" as const,
         description: "Individual report by Hettiarachchi R.H. — Component 3.",
-        link: "#",
+        link: "/pdfs/IT22120052-25-26J-162.pdf",
       },
       {
-        name: "IT21219320 - Personalized Learning Plans",
+        name: "IT22095480 - Personalized Learning Plans",
         type: "PDF",
         status: "available" as const,
         description: "Individual report by Jayasooriya L.T. — Component 4.",
-        link: "#",
+        link: "/pdfs/IT22095480-25-26J-162.pdf",
       },
     ],
   },
@@ -114,7 +90,7 @@ const documentCategories = [
       {
         name: "Final Group Report",
         type: "PDF",
-        status: "available" as const,
+        status: "pending" as const,
         description: "Complete group research report covering all four components.",
         link: "#",
       },
@@ -123,7 +99,7 @@ const documentCategories = [
         type: "PDF",
         status: "available" as const,
         description: "Published research paper — TeachMate AI Journal Paper.",
-        link: "#",
+        link: "/pdfs/TeachMateAI_Journal_Paper.pdf",
       },
     ],
   },
@@ -233,6 +209,8 @@ export function DocumentsSection() {
                         {doc.status === "available" && (
                           <a
                             href={doc.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="flex h-8 w-8 items-center justify-center rounded-lg bg-white/5 text-[#8892b0] transition-colors hover:bg-[#6c5ce7]/20 hover:text-[#a78bfa]"
                             title="Download"
                           >

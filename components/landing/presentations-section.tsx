@@ -19,7 +19,7 @@ const presentations = [
       "Initial project proposal covering problem identification, literature review, proposed solution architecture, and project timeline.",
     date: "March 2024",
     status: "available" as const,
-    link: "#",
+    link: "/ppxts/ResearchProposal.pptx",
     slideCount: 28,
   },
   {
@@ -29,7 +29,7 @@ const presentations = [
       "First progress review demonstrating system design, initial implementation of VLM-based grading, knowledge graph prototype, and early evaluation metrics.",
     date: "September 2024",
     status: "available" as const,
-    link: "#",
+    link: "/ppxts/PP1 (25-26J-162).pptx",
     slideCount: 35,
   },
   {
@@ -39,7 +39,7 @@ const presentations = [
       "Second progress review showcasing integrated system testing, Bloom's classification results, mobile app prototype, and comprehensive evaluation data.",
     date: "January 2025",
     status: "available" as const,
-    link: "#",
+    link: "/ppxts/PP2 (25-26J-162).pptx",
     slideCount: 42,
   },
   {
@@ -48,7 +48,7 @@ const presentations = [
     description:
       "Complete project presentation including final system demo, research results, statistical analysis, and future work recommendations.",
     date: "May 2025",
-    status: "available" as const,
+    status: "pending" as const,
     link: "#",
     slideCount: 50,
   },
@@ -144,6 +144,8 @@ export function PresentationsSection() {
                   {pres.status === "available" && (
                     <a
                       href={pres.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 rounded-lg bg-[#6c5ce7]/10 px-4 py-2 text-xs font-semibold text-[#a78bfa] transition-colors hover:bg-[#6c5ce7]/20"
                     >
                       <Download className="h-3.5 w-3.5" />
