@@ -47,7 +47,7 @@ const teamMembers = [
     color: "#00b894",
     gradient: "from-[#00b894] to-[#55efc4]",
     initials: "RH",
-    image: null,
+    image: "/images/ridmi.jpeg",
   },
   {
     name: "Jayasooriya L.T.",
