@@ -10,23 +10,32 @@ export function HeroSection() {
   return (
     <section
       id="home"
-      className="relative flex min-h-screen items-center justify-center overflow-hidden"
+      className="relative flex min-h-screen items-center overflow-hidden"
     >
-      {/* Background Glow Orbs */}
-      <div className="pointer-events-none absolute inset-0">
-        <div className="absolute top-1/4 left-1/4 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#6c5ce7] opacity-[0.07] blur-[120px]" />
-        <div className="absolute right-1/4 bottom-1/4 h-[400px] w-[400px] translate-x-1/2 translate-y-1/2 rounded-full bg-[#00d2ff] opacity-[0.07] blur-[120px]" />
-        <div className="absolute top-1/2 left-1/2 h-[300px] w-[300px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#a78bfa] opacity-[0.05] blur-[100px]" />
+      {/* Background Hero Image */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="/images/hero_new.png"
+          alt="Background"
+          fill
+          className="object-cover"
+          priority
+        />
+        {/* Sophisticated Overlay */}
+        <div className="absolute inset-0 bg-black/20" />
+        <div className="absolute inset-0 bg-linear-to-r from-black via-black/60 to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-b from-black/60 via-transparent to-black/80" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(0,0,0,0)_0%,rgba(0,0,0,0.6)_100%)]" />
       </div>
 
-      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full">
+        <div className="max-w-3xl">
           {/* Left Content */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="text-center lg:text-left"
+            className="text-left"
           >
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -38,7 +47,7 @@ export function HeroSection() {
                 className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#6c5ce7]/30 bg-[#6c5ce7]/10 px-4 py-2 text-sm text-[#a78bfa]"
               >
                 <Sparkles className="h-3.5 w-3.5" />
-                SLIIT Research Project 2024/2025
+                SLIIT Research Project 2024/2025 (162)
               </Badge>
             </motion.div>
 
@@ -57,7 +66,7 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 0.6 }}
-              className="mb-4 text-lg leading-relaxed text-[#8892b0] sm:text-xl"
+              className="mb-4 text-lg leading-relaxed text-[#ccd6f6] sm:text-xl"
             >
               An Integrated AI-Powered Grading System &amp; Teacher Guidance
               Automation for O/L ICT Education in Sri Lanka
@@ -67,7 +76,7 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6, duration: 0.6 }}
-              className="mb-8 text-sm leading-relaxed text-[#5a6380]"
+              className="mb-8 text-sm leading-relaxed text-[#8892b0]"
             >
               Faculty of Computing, Sri Lanka Institute of Information Technology
               (SLIIT)
@@ -77,7 +86,7 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.7, duration: 0.6 }}
-              className="flex flex-col items-center gap-4 sm:flex-row lg:justify-start"
+              className="flex flex-col items-center gap-4 sm:flex-row justify-start"
             >
               <Button
                 asChild
@@ -107,43 +116,21 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.9, duration: 0.6 }}
-              className="mt-12 flex flex-wrap items-center justify-center gap-8 lg:justify-start"
+              className="mt-12 flex flex-wrap items-center justify-start gap-8"
             >
               {[
                 { value: "84.9%", label: "Grading Time Saved" },
                 { value: "0.83", label: "F1-Score" },
                 { value: "14.4%", label: "Learning Improvement" },
               ].map((stat) => (
-                <div key={stat.label} className="text-center">
+                <div key={stat.label} className="text-left">
                   <p className="text-2xl font-bold text-white sm:text-3xl">
                     {stat.value}
                   </p>
-                  <p className="mt-1 text-xs text-[#5a6380]">{stat.label}</p>
+                  <p className="mt-1 text-xs text-[#8892b0]">{stat.label}</p>
                 </div>
               ))}
             </motion.div>
-          </motion.div>
-
-          {/* Right Image */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-            className="relative hidden lg:block"
-          >
-            <div className="animate-float-slow relative">
-              <div className="absolute -inset-4 rounded-3xl bg-linear-to-br from-[#6c5ce7]/20 to-[#00d2ff]/20 blur-2xl" />
-              <div className="glass relative overflow-hidden rounded-3xl p-2">
-                <Image
-                  src="/images/hero.png"
-                  alt="TeachMate AI Platform"
-                  width={600}
-                  height={400}
-                  className="rounded-2xl object-cover"
-                  priority
-                />
-              </div>
-            </div>
           </motion.div>
         </div>
       </div>
@@ -159,9 +146,9 @@ export function HeroSection() {
           href="#about"
           animate={{ y: [0, 8, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
-          className="flex flex-col items-center gap-2 text-[#5a6380] transition-colors hover:text-[#a78bfa]"
+          className="flex flex-col items-center gap-2 text-[#8892b0] transition-colors hover:text-[#a78bfa]"
         >
-          <span className="text-xs font-medium uppercase tracking-widest">Scroll</span>
+          <span className="text-xs font-medium uppercase tracking-widest">Scroll Down</span>
           <ArrowDown className="h-4 w-4" />
         </motion.a>
       </motion.div>
