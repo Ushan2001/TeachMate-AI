@@ -21,6 +21,7 @@ const presentations = [
     status: "available" as const,
     link: "/ppxts/ResearchProposal.pptx",
     slideCount: 28,
+    previewImage: "/images/previews/proposal.png",
   },
   {
     id: 2,
@@ -31,6 +32,7 @@ const presentations = [
     status: "available" as const,
     link: "/ppxts/PP1 (25-26J-162).pptx",
     slideCount: 35,
+    previewImage: "/images/previews/progress1.png",
   },
   {
     id: 3,
@@ -41,6 +43,7 @@ const presentations = [
     status: "available" as const,
     link: "/ppxts/PP2 (25-26J-162).pptx",
     slideCount: 42,
+    previewImage: "/images/previews/progress2.png",
   },
   {
     id: 4,
@@ -51,6 +54,7 @@ const presentations = [
     status: "pending" as const,
     link: "#",
     slideCount: 50,
+    previewImage: "/images/previews/final.png",
   },
 ];
 
@@ -58,6 +62,8 @@ const statusConfig = {
   available: { label: "Available", color: "#00b894", icon: CheckCircle2 },
   pending: { label: "Coming Soon", color: "#8892b0", icon: Clock },
 };
+
+import Image from "next/image";
 
 export function PresentationsSection() {
   const sectionRef = useRef(null);
@@ -106,20 +112,33 @@ export function PresentationsSection() {
                 className="glass group rounded-2xl overflow-hidden transition-all duration-300 hover:bg-white/6"
               >
                 {/* Slide Preview Header */}
-                <div className="relative flex h-36 items-center justify-center bg-linear-to-br from-[#6c5ce7]/10 via-[#00d2ff]/5 to-transparent">
-                  <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-white/5 text-[#a78bfa] transition-transform duration-300 group-hover:scale-110">
-                    <Presentation className="h-8 w-8" />
+                <div className="relative h-48 w-full overflow-hidden bg-white/5">
+                  <Image
+                    src={pres.previewImage}
+                    alt={pres.title}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent" />
+                  
+                  {/* Icon Overlay */}
+                  <div className="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#6c5ce7]/80 text-white shadow-lg backdrop-blur-sm">
+                      <Presentation className="h-6 w-6" />
+                    </div>
                   </div>
+
                   {/* Slide count badge */}
-                  <div className="absolute top-4 right-4 flex items-center gap-1 rounded-full bg-black/30 px-2.5 py-1 text-[10px] font-medium text-white backdrop-blur">
+                  <div className="absolute top-4 right-4 flex items-center gap-1 rounded-full bg-black/50 px-2.5 py-1 text-[10px] font-medium text-white backdrop-blur">
                     <Play className="h-2.5 w-2.5" />
                     {pres.slideCount} slides
                   </div>
+
                   {/* Status badge */}
                   <div
-                    className="absolute top-4 left-4 flex items-center gap-1 rounded-full px-2.5 py-1 text-[10px] font-semibold"
+                    className="absolute top-4 left-4 flex items-center gap-1 rounded-full px-2.5 py-1 text-[10px] font-semibold backdrop-blur"
                     style={{
-                      backgroundColor: `${st.color}20`,
+                      backgroundColor: `${st.color}40`,
                       color: st.color,
                     }}
                   >
