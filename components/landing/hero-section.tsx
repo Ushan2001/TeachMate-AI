@@ -57,9 +57,7 @@ export function HeroSection() {
               transition={{ delay: 0.3, duration: 0.8 }}
               className="mb-6 text-4xl font-extrabold leading-tight tracking-tight sm:text-5xl md:text-6xl lg:text-7xl"
             >
-              <span className="text-white">TeachMate</span>
-              <br />
-              <span className="gradient-text">AI</span>
+              <span className="text-white">TeachMate&nbsp;<span className="gradient-text">AI</span></span>
             </motion.h1>
 
             <motion.p
