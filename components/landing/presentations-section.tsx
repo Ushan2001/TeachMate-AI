@@ -51,9 +51,9 @@ const presentations = [
     description:
       "Complete project presentation including final system demo, research results, statistical analysis, and future work recommendations.",
     date: "May 2025",
-    status: "pending" as const,
-    link: "#",
-    slideCount: 50,
+    status: "available" as const,
+    link: "/ppxts/Final Presentation (25-26J-162).pptx",
+    slideCount: 30,
     previewImage: "/images/previews/final.png",
   },
 ];
@@ -120,7 +120,7 @@ export function PresentationsSection() {
                     className="object-cover transition-transform duration-500 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent" />
-                  
+
                   {/* Icon Overlay */}
                   <div className="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                     <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#6c5ce7]/80 text-white shadow-lg backdrop-blur-sm">

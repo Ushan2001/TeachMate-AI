@@ -88,11 +88,11 @@ const documentCategories = [
     color: "#e17055",
     documents: [
       {
-        name: "Final Group Report",
+        name: "Final Group Report (Draft)",
         type: "PDF",
-        status: "pending" as const,
+        status: "available" as const,
         description: "Complete group research report covering all four components.",
-        link: "#",
+        link: "/pdfs/TechMate AI_Group.pdf",
       },
       {
         name: "Research Paper",
